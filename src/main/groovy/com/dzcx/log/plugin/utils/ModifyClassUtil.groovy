@@ -116,7 +116,7 @@ public class ModifyClassUtil {
                 Iterator<Map.Entry<String, MethodCell>> iterator = ReWriterConfig.sFragmentMethods.entrySet().iterator()
                 while (iterator.hasNext()) {
                     Map.Entry<String, MethodCell> entry = iterator.next()
-                    String key = entry.getKey()
+                    String     key        = entry.getKey()
                     MethodCell methodCell = entry.getValue()
 
                     if (visitedFragMethods.contains(key)) continue
@@ -275,10 +275,8 @@ public class ModifyClassUtil {
             // 判断其它
             if (instanceOfOther(superName) || instanceOfOther(className)) {
                 MethodCell methodCell = ReWriterConfig.sOthers.get(name + desc)
-                Log.info("====instanceOfOther=====11111111===== ${methodCell}====");
                 if (methodCell != null) {
                     // 记录该方法已存在
-                    Log.info("====instanceOfOther=====2222222222===== ${name + desc}====");
                     visitedFragMethods.add(name + desc)
                     if (onlyVisit) {
                         myMv = new MethodLogVisitor(cv.visitMethod(access, name, desc, signature, exceptions));
