@@ -288,10 +288,10 @@ public class ModifyClassUtil {
                                 @Override
                                 void visitInsn(int opcode) {
                                     // 确保super.onHiddenChanged(hidden);等先被调用
-                                    Log.info("====instanceOfOther=====333333333333333333===== ${methodCell.agentName}====");
+//                                    Log.info("====instanceOfOther=====333333333333333333===== ${methodCell.agentName}====");
                                     if (opcode == Opcodes.RETURN) {
                                         //在返回之前安插代码
-                                        Log.info("====instanceOfOther=====4444444444444444===== ${methodCell.agentName}====");
+//                                        Log.info("====instanceOfOther=====4444444444444444===== ${methodCell.agentName}====");
                                         visitMethodWithLoadedParams(methodVisitor, Opcodes.INVOKESTATIC, ReWriterConfig.sAgentClassName, methodCell.agentName, methodCell.agentDesc, methodCell.paramsStart, methodCell.paramsCount, methodCell.opcodes)
                                     }
                                     super.visitInsn(opcode);

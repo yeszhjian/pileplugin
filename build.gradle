@@ -23,15 +23,34 @@ dependencies {
 repositories {
     mavenCentral()
 }
-//apply from: 'mvn-push.gradle'
+
 group = 'com.dzcx.log.plugin'
 version = '1.0.0'
 uploadArchives {
-//    version = version + '-SNAPSHOT'//if you are testing the demo I provide locally, you can uncomment this.
     repositories {
         mavenDeployer {
             repository(url: uri('./repo'))
             snapshotRepository(url: uri('./snapshotRepo'))
+//            configurePOM(pom)
+//            repository(url: MAVEN_REPO_RELEASE_URL) {
+//                authentication(userName: NEXUS_USERNAME, password: NEXUS_PASSWORD)
+//            }
+//            snapshotRepository(url: MAVEN_REPO_SNAPSHOT_URL) {
+//                authentication(userName: NEXUS_USERNAME, password: NEXUS_PASSWORD)
+//            }
         }
     }
 }
+
+//private configurePOM(def pom) {
+//    pom.project {
+//        groupId POM_GROUP_ID
+//        artifactId POM_ARTIFACT_ID
+//        version VERSION_NAME
+//        name POM_NAME
+//        packaging POM_PACKAGING
+//        description POM_DESCRIPTION
+//        url POM_URL
+//        inceptionYear POM_INCEPTION_YEAR
+//    }
+//}

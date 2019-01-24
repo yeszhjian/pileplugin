@@ -9,6 +9,7 @@ import com.dzcx.log.plugin.utils.DataHelper
 import com.dzcx.log.plugin.utils.Log
 import com.dzcx.log.plugin.utils.ModifyClassUtil
 import groovy.io.FileType
+import jdk.internal.org.objectweb.asm.Opcodes
 import org.apache.commons.codec.digest.DigestUtils
 import org.apache.commons.io.FileUtils
 import org.apache.commons.io.IOUtils
@@ -77,6 +78,24 @@ public class InjectTransform extends Transform {
             targetPackages.addAll(inputPackages);
             Log.info "==============@targetPackages = ${targetPackages}=============="
         }
+
+//        def boolean quiet = false
+        HashSet<String> inputMethods = project.codelessConfig.targetMethods
+        Iterator<String> iterator = inputMethods.iterator()
+        // 注意，闭包里的return语句相当于continue，不会跳出遍历，故用while或for
+        while (iterator.hasNext()) {
+            String methodname = iterator.next()
+            Log.info "==============@targetmethods = ${methodname}=============="
+//            ReWriterConfig.sOthers.put("",new MethodCell(
+//                    'logApiErrorInfo',
+//                    '(Ljava/lang;)V',
+//                    '',
+//                    'onApiErrorInfo',
+//                    '(Ljava/lang/String;)V',
+//                    1, 1,
+//                    [Opcodes.ALOAD]))
+        }
+
 
         /**
          * 获取所有依赖的classPaths
