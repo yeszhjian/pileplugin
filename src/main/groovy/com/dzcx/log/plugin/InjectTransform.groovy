@@ -81,21 +81,33 @@ public class InjectTransform extends Transform {
 
 //        def boolean quiet = false
         HashSet<String> inputMethods = project.codelessConfig.targetMethods
-        Iterator<String> iterator = inputMethods.iterator()
-        // 注意，闭包里的return语句相当于continue，不会跳出遍历，故用while或for
-        while (iterator.hasNext()) {
-            String methodname = iterator.next()
-            Log.info "==============@targetmethods = ${methodname}=============="
-//            ReWriterConfig.sOthers.put("",new MethodCell(
-//                    'logApiErrorInfo',
-//                    '(Ljava/lang;)V',
-//                    '',
-//                    'onApiErrorInfo',
-//                    '(Ljava/lang/String;)V',
-//                    1, 1,
-//                    [Opcodes.ALOAD]))
+        Log.info "==============@targetMethods = ${inputMethods}=============="
+        inputMethods.each {
+            //'onResponseInfo#(Lokhttp3/Response;)V# #onIntercept#1#1#25'
+            String[] methodcell = it.split('#')
+            int paramsStart = Integer.parseInt(methodcell[4])
+            int paramsCount = Integer.parseInt(methodcell[5])
+            Integer paramsType = Integer.parseInt(methodcell[6])
+            List<Integer> opcodes = new ArrayList<>()
+            for(int i = paramsStart; i <= paramsCount; i++) {
+                opcodes.add(paramsType)
+            }
+            ReWriterConfig.sOthers.put(methodcell[0] + methodcell[1],new MethodCell(methodcell[0], methodcell[1], methodcell[2], methodcell[3], methodcell[1], paramsStart, paramsCount, opcodes))
         }
 
+        ReWriterConfig.sOthers.each {
+            MethodCell methodCell = it.value
+            Log.info "========222222======@key = ${it.key}=============="
+            Log.info "========222222======@methodCell.name = ${methodCell.name}=============="
+            Log.info "========222222======@methodCell.desc = ${methodCell.desc}=============="
+            Log.info "========222222======@methodCell.parent = ${methodCell.parent}=============="
+            Log.info "========222222======@methodCell.agentName = ${methodCell.agentName}=============="
+            Log.info "========222222======@methodCell.agentDesc = ${methodCell.agentDesc}=============="
+            Log.info "========222222======@methodCell.paramsStart = ${methodCell.paramsStart}=============="
+            Log.info "========222222======@methodCell.paramsCount = ${methodCell.paramsCount}=============="
+            Log.info "========222222======@methodCell.opcodes.get(0) = ${methodCell.opcodes.get(0)}=============="
+            Log.info "========222222======@methodCell.opcodes.size() = ${methodCell.opcodes.size()}=============="
+        }
 
         /**
          * 获取所有依赖的classPaths

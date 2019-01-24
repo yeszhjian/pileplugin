@@ -230,52 +230,54 @@ public class ReWriterConfig {
     /**
      * others
      */
+//    public final static HashMap<String, MethodCell> sOthers = new HashMap<>()
+//    static {
+//        sOthers.put('logApiErrorInfo(Ljava/lang/String;)V', new MethodCell(
+//                'logApiErrorInfo',
+//                '(Ljava/lang;)V',
+//                '',
+//                'onApiErrorInfo',
+//                '(Ljava/lang/String;)V',
+//                1, 1,
+//                [Opcodes.ALOAD]))
+//
+//        sOthers.put('onReceive(Landroid/content/Context;Landroid/content/Intent;)V', new MethodCell(
+//                'onReceive',
+//                '(Ljava/lang;)V',
+//                '',
+//                'onReceive',
+//                '(Landroid/content/Context;Landroid/content/Intent;)V',
+//                1, 2,
+//                [Opcodes.ALOAD, Opcodes.ALOAD]))
+//
+//        sOthers.put('onRequestInfo(Lokhttp3/Request;)V', new MethodCell(
+//                'onRequestInfo',
+//                '(Lokhttp3/Request;)V',
+//                '',
+//                'onIntercept',
+//                '(Lokhttp3/Request;)V',
+//                1, 1,
+//                [Opcodes.ALOAD]))
+//
+//        sOthers.put('onResponseInfo(Lokhttp3/Response;)V', new MethodCell(
+//                'onResponseInfo',
+//                '(Lokhttp3/Response;)V',
+//                '',
+//                'onIntercept',
+//                '(Lokhttp3/Response;)V',
+//                1, 1,
+//                [Opcodes.ALOAD]))
+//
+//        sOthers.put('handlePushData(Ljava/lang/String;)V', new MethodCell(
+//                'handlePushData',
+//                '(Ljava/lang/String;)V',
+//                '',
+//                'onPushData',
+//                '(Ljava/lang/String;)V',
+//                1, 1,
+//                [Opcodes.ALOAD]))
+//
+//    }
+
     public final static HashMap<String, MethodCell> sOthers = new HashMap<>()
-    static {
-        sOthers.put('logApiErrorInfo(Ljava/lang/String;)V', new MethodCell(
-                'logApiErrorInfo',
-                '(Ljava/lang;)V',
-                '',
-                'onApiErrorInfo',
-                '(Ljava/lang/String;)V',
-                1, 1,
-                [Opcodes.ALOAD]))
-
-        sOthers.put('onReceive(Landroid/content/Context;Landroid/content/Intent;)V', new MethodCell(
-                'onReceive',
-                '(Ljava/lang;)V',
-                '',
-                'onReceive',
-                '(Landroid/content/Context;Landroid/content/Intent;)V',
-                1, 2,
-                [Opcodes.ALOAD, Opcodes.ALOAD]))
-
-        sOthers.put('onRequestInfo(Lokhttp3/Request;)V', new MethodCell(
-                'onRequestInfo',
-                '(Lokhttp3/Request;)V',
-                '',
-                'onIntercept',
-                '(Lokhttp3/Request;)V',
-                1, 1,
-                [Opcodes.ALOAD]))
-
-        sOthers.put('onResponseInfo(Lokhttp3/Response;)V', new MethodCell(
-                'onResponseInfo',
-                '(Lokhttp3/Response;)V',
-                '',
-                'onIntercept',
-                '(Lokhttp3/Response;)V',
-                1, 1,
-                [Opcodes.ALOAD]))
-
-        sOthers.put('handlePushData(Ljava/lang/String;)V', new MethodCell(
-                'handlePushData',
-                '(Ljava/lang/String;)V',
-                '',
-                'onPushData',
-                '(Ljava/lang/String;)V',
-                1, 1,
-                [Opcodes.ALOAD]))
-
-    }
 }
