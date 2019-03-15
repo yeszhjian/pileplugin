@@ -1,16 +1,16 @@
 # pileplugin
 asm插桩插件，支持activity生命周期，servive, Broadcast,自定义方法插桩。
 
-使用配置
-1，在build.gradle里面增加
-本地仓库方式 ：
+#### 使用配置
+ * 1，在build.gradle里面增加
+#### <a name="3">本地仓库方式：</a>
 repositories {
   maven {
     url uri('./pileplugin/repo')
   }
 }
 
-远程仓库方式：
+#### <a name="3">远程仓库方式：</a>
 repositories {
   maven {
     url 'http://xxxxxxxx/'
@@ -21,7 +21,7 @@ dependencies {
   classpath 'com.dzcx.log.plugin:pileplugin:x.x.x'
 }
 
-2, 工程module下的build.gradle配置
+ * 2, 工程module下的build.gradle配置
 // 直接引用buildsrc的插件类
 apply plugin: com.dzcx.log.plugin.InjectPluginImpl
 // 引用远程maven仓库的插件
