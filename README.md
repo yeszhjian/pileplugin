@@ -22,28 +22,40 @@ dependencies {
 
 #### module下的build.gradle配置
 
-** 直接引用buildsrc的插件类 **
+直接引用buildsrc的插件类
 
-** apply plugin: com.dzcx.log.plugin.InjectPluginImpl **
+apply plugin: com.dzcx.log.plugin.InjectPluginImpl
 
-** 引用远程maven仓库的插件 **
+引用远程maven仓库的插件
 
-** apply plugin: 'com.codeless' **
+apply plugin: 'com.codeless'
 
 codelessConfig {
+
     this will determine the name of this plugin transform, no practical use.
+
     pluginName = 'myPluginTest'
+
     turn this on to make it print help content, default value is true
+
     showHelp = true
+
     this flag will decide whether the log of the modifying process be printed or not, default value is false
+
     keepQuiet = false
+
     this is a kit feature of the plugin, set it true to see the time consume of this build
+
     watchTimeConsume = false
 
     this is the most important part, 3rd party JAR packages that want our plugin to inject;
+
     our plugin will inject package defined in 'AndroidManifest.xml' and 'butterknife.internal.butterknife.internal.DebouncingOnClickListener' by default.
+
     structure is like ['butterknife.internal','com.a.c'], type is HashSet<String>.
+
     You can also specify the name of the class;
+
     targetPackages = ['android.content.BroadcastReceiver']
 
     targetMethods = ['logApiErrorInfo#(Ljava/lang/String;)V# #onApiErrorInfo#1#1#25']
