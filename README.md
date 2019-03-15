@@ -21,10 +21,14 @@ dependencies {
 }
 
 #### module下的build.gradle配置
-** 直接引用buildsrc的插件类
-** apply plugin: com.dzcx.log.plugin.InjectPluginImpl
-** 引用远程maven仓库的插件
-** apply plugin: 'com.codeless'
+
+** 直接引用buildsrc的插件类 **
+
+** apply plugin: com.dzcx.log.plugin.InjectPluginImpl **
+
+** 引用远程maven仓库的插件 **
+
+** apply plugin: 'com.codeless' **
 
 codelessConfig {
     this will determine the name of this plugin transform, no practical use.
