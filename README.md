@@ -30,6 +30,7 @@ apply plugin: com.dzcx.log.plugin.InjectPluginImpl
 
 apply plugin: 'com.codeless'
 
+```groovy
 codelessConfig {
 
     this will determine the name of this plugin transform, no practical use.
@@ -60,3 +61,4 @@ codelessConfig {
 
     targetMethods = ['logApiErrorInfo#(Ljava/lang/String;)V# #onApiErrorInfo#1#1#25']
 }
+```
