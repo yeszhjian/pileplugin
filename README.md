@@ -23,9 +23,9 @@ dependencies {
 
 2, 工程module下的build.gradle配置
 // 直接引用buildsrc的插件类
-apply plugin: xxxxxxxxxx
+apply plugin: com.dzcx.log.plugin.InjectPluginImpl
 // 引用远程maven仓库的插件
-//apply plugin: 'xxxxxxx'
+//apply plugin: 'com.codeless'
 codelessConfig {
     //this will determine the name of this plugin transform, no practical use.
     pluginName = 'myPluginTest'
@@ -40,9 +40,7 @@ codelessConfig {
     //our plugin will inject package defined in 'AndroidManifest.xml' and 'butterknife.internal.butterknife.internal.DebouncingOnClickListener' by default.
     //structure is like ['butterknife.internal','com.a.c'], type is HashSet<String>.
     //You can also specify the name of the class;
-    targetPackages = ['com.dzcx.core.api.net.intercepterutils.CommonInterceptor',
-                      'com.dzcx.core.api.net.exception.ApiException',
-                      'android.content.BroadcastReceiver']
+    targetPackages = ['android.content.BroadcastReceiver']
 
     targetMethods = ['logApiErrorInfo#(Ljava/lang/String;)V# #onApiErrorInfo#1#1#25']
 }
