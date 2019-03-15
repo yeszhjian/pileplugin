@@ -7,7 +7,7 @@ import org.objectweb.asm.*
 /**
  * Created by bryansharp(bsp0911932@163.com) on 2016/5/10.
  * Modified by nailperry on 2017/3/2.
- *
+ * Modified by yeszhjian on 18/11/20.
  */
 public class ModifyClassUtil {
 

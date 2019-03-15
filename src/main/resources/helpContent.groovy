@@ -21,5 +21,7 @@
 //    //You can also specify the name of the class;
 //    //example: ['com.xxx.xxx.BaseFragment']
 //    targetPackages = []
+//    //example: ['logApiErrorInfo#(Ljava/lang/String;)V# #onApiErrorInfo#1#1#25']
+//    targetMethods = []
 //}
 ///////////////////// - Help Content END - /////////////////////////////
